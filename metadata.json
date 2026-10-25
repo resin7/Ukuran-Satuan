@@ -1,0 +1,6 @@
+{
+  "name": "Petualangan Pengukuran Satuan SD Kelas 2",
+  "description": "Media pembelajaran matematika interaktif kelas 2 SD dengan alur KGA (Konkret-Gambar-Abstrak) untuk panjang, berat dengan timbangan digital dan jungkitan, serta durasi waktu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

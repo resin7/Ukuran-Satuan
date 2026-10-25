@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FFFDF5;
+    --primary-coral: #FF6B6B;
+    --secondary-teal: #4ECDC4;
+    --accent-yellow: #FFE66D;
+    --deep-slate: #2C3E50;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FFFDF5;
+    color: #2C3E50;
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Fredoka', 'Plus Jakarta Sans', cursive, sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Custom child-friendly tactile shadow and bounce transitions */
+.shadow-tactile {
+  box-shadow: 0 6px 0 0 rgba(44, 62, 80, 0.15), 0 10px 20px -5px rgba(44, 62, 80, 0.08);
+}
+
+.shadow-tactile-sm {
+  box-shadow: 0 4px 0 0 rgba(44, 62, 80, 0.12), 0 6px 12px -3px rgba(44, 62, 80, 0.06);
+}
+
+.shadow-tactile-pressed {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 0 rgba(44, 62, 80, 0.15), 0 4px 8px -2px rgba(44, 62, 80, 0.08);
+}
+
+.digital-lcd-font {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Mascot press & cheer animation */
+@keyframes mascot-bounce-cheer {
+  0% { transform: scale(1) translateY(0) rotate(0deg); }
+  20% { transform: scale(0.9, 1.1) translateY(-14px) rotate(-8deg); }
+  40% { transform: scale(1.15, 0.9) translateY(0) rotate(8deg); }
+  60% { transform: scale(0.95, 1.05) translateY(-8px) rotate(-4deg); }
+  80% { transform: scale(1.05, 0.98) translateY(0) rotate(2deg); }
+  100% { transform: scale(1) translateY(0) rotate(0deg); }
+}
+
+.animate-mascot-cheer {
+  animation: mascot-bounce-cheer 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: bottom center;
+}
+
+@keyframes mascot-idle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-mascot-idle {
+  animation: mascot-idle-float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbars for items tray */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EEDF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEB8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4B89F;
+}
+
+/* Print Mode Styling for Assessment Report */
+@media print {
+  header, footer, .no-print, aside, button[title*="Musik"], nav {
+    display: none !important;
+  }
+
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .printable-report {
+    border: 2px solid #2C3E50 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+  }
+}
